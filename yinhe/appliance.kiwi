@@ -17,7 +17,7 @@
         <packagemanager>zypper</packagemanager>
         <locale>zh_CN</locale>
         <keytable>us</keytable>
-        <timezone>China/Shanghai</timezone>
+        <timezone>Asia/Shanghai</timezone>
         <rpm-excludedocs>true</rpm-excludedocs>
         <rpm-check-signatures>false</rpm-check-signatures>
         <bootsplash-theme>bgrt</bootsplash-theme>
