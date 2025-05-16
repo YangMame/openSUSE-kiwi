@@ -65,7 +65,7 @@
         <package name="bash-completion"/>
         <package name="dhcp-client"/>
         <package name="which"/>
-        <package name="kernel-default"/>
+        <package name="kernel-phytium"/>
         <package name="timezone"/>
         <package name="shim"/>
     </packages>
