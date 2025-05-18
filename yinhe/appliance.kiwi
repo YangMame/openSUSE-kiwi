@@ -10,7 +10,6 @@
     </description>
     <profiles>
         <profile name="Live" description="Live image of Tumbleweed"/>
-        <profile name="Disk" description="OEM image of Tumbleweed"/>
     </profiles>
     <preferences>
         <version>1.15.0</version>
@@ -24,20 +23,11 @@
         <bootloader-theme>openSUSE</bootloader-theme>
     </preferences>
     <preferences profiles="Live">
-        <type image="iso" flags="overlay" firmware="uefi" kernelcmdline="console=ttyS0" hybridpersistent_filesystem="ext4" hybridpersistent="true"/>
-    </preferences>
-    <preferences profiles="Disk">
-        <type image="oem" firmware="uefi" kernelcmdline="console=ttyS0" installiso="true" installboot="install" filesystem="ext4">
-            <bootloader name="grub2" console="serial" timeout="10"/>
-            <oemconfig>
-                <oem-unattended>true</oem-unattended>
-                <oem-swap>true</oem-swap>
-                <oem-swapsize>200</oem-swapsize>
-            </oemconfig>
-        </type>
+        <type image="iso" flags="overlay" firmware="uefi" kernelcmdline="loglevel=7" hybridpersistent_filesystem="ext4" hybridpersistent="true"/>
     </preferences>
     <users>
-        <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root" groups="root"/>
+        <user password="$6$SQyncNpg1FMmL03H$SyNY1dA2wK3UZl0B79kKu3BuQRxrt4oySEyT/T6te366gIXnxysAmcRgzmRCiTC.kCWWlS7WoVQYvJ90AYMtd0" home="/root" name="root" groups="root"/>
+        <user password="$6$SQyncNpg1FMmL03H$SyNY1dA2wK3UZl0B79kKu3BuQRxrt4oySEyT/T6te366gIXnxysAmcRgzmRCiTC.kCWWlS7WoVQYvJ90AYMtd0" home="/home/live" name="live" groups="live"/>
     </users>
     <repository type="rpm-md">
         <source path="obsrepositories:/"/>
@@ -48,7 +38,7 @@
         <package name="procps"/>
         <package name="systemd"/>
         <package name="plymouth-theme-bgrt"/>
-        <package name="grub2-branding-openSUSE"/>
+        <package name="grub2-branding-upstream"/>
         <package name="iputils"/>
         <package name="vim"/>
         <package name="grub2"/>
@@ -57,6 +47,7 @@
         <package name="plymouth"/>
         <package name="fontconfig"/>
         <package name="fonts-config"/>
+        <package name="google-noto-sans-cjk-fonts"/>
         <package name="tar"/>
         <package name="parted"/>
         <package name="openssh"/>
@@ -68,13 +59,32 @@
         <package name="kernel-phytium"/>
         <package name="timezone"/>
         <package name="shim"/>
+
+        <package name="sudo"/>
+        <package name="pciutils"/>
+        <package name="usbutils"/>
+        <package name="kernel-firmware-all"/>
+        <package name="NetworkManager"/>
+
+        <package name="yast2-trans-zh_CN"/>
+        <package name="desktop-translations"/>
+        <package name="MozillaFirefox-translations-common"/>
+
+        <package name="sddm"/>
+        <package name="patterns-kde-kde"/>
+        <package name="plasma5-defaults-openSUSE"/>
+        <package name="patterns-kde-kde_utilities"/>
+        <package name="patterns-kde-kde_utilities_opt"/>
+        <package name="patterns-kde-kde_yast"/>
+        <package name="konsole"/>
+        <package name="firefox"/>
+
+        <package name="calamares"/>
+        <package name="calamares-branding-upstream"/>
+        <package name="calamares-lang"/>
     </packages>
     <packages type="image" profiles="Live">
         <package name="dracut-kiwi-live"/>
-    </packages>
-    <packages type="image" profiles="Disk">
-        <package name="dracut-kiwi-oem-repart"/>
-        <package name="dracut-kiwi-oem-dump"/>
     </packages>
     <packages type="bootstrap">
         <package name="udev"/>
