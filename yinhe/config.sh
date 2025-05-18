@@ -33,7 +33,4 @@ suseSetupProduct
 #--------------------------------------
 suseInsertService sshd
 
-#======================================
-# Setup default target, multi-user
-#--------------------------------------
-baseSetRunlevel 3
+baseUpdateSysConfig /etc/sysconfig/displaymanager DISPLAYMANAGER sddm
